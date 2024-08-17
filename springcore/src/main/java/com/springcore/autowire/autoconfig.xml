@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+           
+      <bean class="com.springcore.autowire.Address" name="address">
+      	<property name="street" value="Temp street" />
+      	<property name="city" value="Nagpur" />
+      </bean>
+      
+      <bean class="com.springcore.autowire.Address" name="address1">
+      	<property name="street" value="Temp street1" />
+      	<property name="city" value="Nagpur1" />
+      </bean>
+      
+      <!-- Autowire - byName -->
+      <!-- <bean class="com.springcore.autowire.Emp" name="emp1" autowire="byName" />  -->
+      
+      <!-- Above bean i.e. <bean class="com.springcore.autowire.Address" name="address"> it's bean name should be same as with 
+      Emp class reference variable private Address address i.e. address (i.e variable ke name ko check krra hai) in case of 
+      autowire byName 
+      But in case of autowire byType it'll search the type i.e. Address of Emp class with <bean class="com.springcore.autowire
+      .Address" name="address"> i.e. Address & in this case it is not compulsory ki name should be same -->
+      
+      <!-- Autowire - byType -->
+      <!-- <bean class="com.springcore.autowire.Emp" name="emp1" autowire="byType" /> -->
+      
+      <!-- Autowire - constructor -->
+	  <bean class="com.springcore.autowire.Emp" name="emp1" autowire="constructor" />
+      
+</beans>
